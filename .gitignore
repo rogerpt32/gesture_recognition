@@ -1,0 +1,5 @@
+/doc
+/data/videos/*
+/data/out/*
+/data/fishers/train/
+/data/fishers/test/

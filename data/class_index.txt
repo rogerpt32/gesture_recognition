@@ -1,0 +1,10 @@
+0 walk
+1 bend
+2 jack
+3 jump
+4 pjump
+5 run
+6 side
+7 skip
+8 wave1
+9 wave2

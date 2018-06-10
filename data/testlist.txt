@@ -1,0 +1,10 @@
+daria_walk.avi 0
+denis_bend.avi 1
+eli_jack.avi 2
+ido_jump.avi 3
+ira_pjump.avi 4
+lena_run.avi 5
+lyova_side.avi 6
+moshe_skip.avi 7
+shahar_wave1.avi 8
+daria_wave2.avi 9
