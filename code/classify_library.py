@@ -34,8 +34,10 @@ def toDict(videos):
     videos_by_class = dict()
     for video in videos:
         #we assume each of the videos has the following format:
-        # v_BasketballDunk_g02_c02.fisher.npz
+        # lena_walk.fisher.npz
         name = string.lower(video.split('_')[1])
+        if name.endswith('.fisher.npz'):
+            name=name[:-11]
         if name not in videos_by_class:
             videos_by_class[name] = []
         videos_by_class[name].append(video)
@@ -78,6 +80,8 @@ def make_FV_matrix(videos, fisher_path, class_index):
         vid_path = os.path.join(fisher_path,video)
         matrix.append(np.load(vid_path)['fish'])
         name = string.lower(video.split('_')[1])
+        if name.endswith('.fisher.npz'):
+            name=name[:-11]
         target.append(class_index[name])
     X = np.vstack(matrix)
     Y = np.array(target)
@@ -220,8 +224,8 @@ def train_PCA(inputX, n_samples, pca_dim):
     return pca_transform
 
 
-from sklearn import cross_validation
-from sklearn.learning_curve import learning_curve
+# from sklearn import cross_validation
+from sklearn.model_selection import learning_curve
 def plot_learning_curve(estimator, title, X, y, ylim=None, cv=None,
                         n_jobs=1, train_sizes=np.linspace(.1, 1.0, 5)):
     """

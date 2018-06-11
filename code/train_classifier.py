@@ -59,7 +59,7 @@ X_test_PCA = pca.transform(X_test)
 #Exhaustive Grid Search
 
 C = [1, 10, 50, 100, 1000]
-loss = ['l1', 'l2']
+loss = ['hinge', 'squared_hinge']
 penalty = ['l2']
 kernel = ['poly', 'rbf', 'sigmoid']
 gamma = [0.01, 0.001, 0.0001]

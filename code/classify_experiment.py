@@ -35,7 +35,6 @@ index_class = class_index_file_loaded['index_class'][()]
 training = [filename for filename in os.listdir(training_output) if filename.endswith('.fisher.npz')]
 testing = [filename for filename in os.listdir(testing_output) if filename.endswith('.fisher.npz')]
 
-
 training_dict = classify_library.toDict(training)
 testing_dict = classify_library.toDict(testing)
 
@@ -57,7 +56,7 @@ pca = PCA(n_components=pca_dim)
 pca.fit(X_train)
 X_train_PCA = pca.transform(X_train)
 X_test_PCA = pca.transform(X_test)
-estimator = OneVsRestClassifier(LinearSVC(random_state=0, C=100, loss='l1', penalty='l2'))
+estimator = OneVsRestClassifier(LinearSVC(random_state=0, C=100, loss='hinge', penalty='l2'))
 classifier = estimator.fit(X_train_PCA, Y_train)
 metrics = classify_library.metric_scores(classifier, X_test_PCA, Y_test, verbose=True)
 print metrics
@@ -67,8 +66,8 @@ do_learning_curve = False
 if do_learning_curve:
     X_full = np.vstack([X_train_PCA, X_test_PCA])
     Y_full = np.hstack([Y_train, Y_test])
-    title= "Learning Curves (Linear SVM, C: %d, loss: %s, penalty: %s, PCA dim: %d)" % (100,'l1','l2',pca_dim)
+    title= "Learning Curves (Linear SVM, C: %d, loss: %s, penalty: %s, PCA dim: %d)" % (100,'hinge','squared_hinge',pca_dim)
     cv = cross_validation.ShuffleSplit(X_full.shape[0], n_iter=4,test_size=0.2, random_state=0)
-    estimator = OneVsRestClassifier(LinearSVC(random_state=0, C=100, loss='l1', penalty='l2'))
+    estimator = OneVsRestClassifier(LinearSVC(random_state=0, C=100, loss='hinge', penalty='l2'))
     plot_learning_curve(estimator, title, X_full, Y_full, (0.7, 1.01), cv=cv, n_jobs=1)
     plt.show()
