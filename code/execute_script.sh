@@ -19,3 +19,5 @@ CLASS_INDEX_OUT="../data/class_index"
 python compute_class_index.py $CLASS_INDEX $CLASS_INDEX_OUT
 
 python classify_experiment.py
+
+rm -rf ./tmp/*

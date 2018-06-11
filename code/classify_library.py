@@ -4,6 +4,7 @@
 ## Trains a One vs. Rest SVM classifier on the fisher vector video outputs.
 
 import os, sys, collections, random, string
+import pickle
 import numpy as np
 from tempfile import TemporaryFile
 from sklearn.pipeline import Pipeline
@@ -28,6 +29,15 @@ testing_output='../data/fishers/test/'
 # Useful Helper functions                                      #
 ################################################################
 
+# save the model to disk
+def save_model(model,out_file):
+    filename = out_file+'.sav'
+    pickle.dump(model, open(filename, 'wb'))
+
+# load model from disk
+def load_model(file):
+    loaded_model = pickle.load(open(file, 'rb'))
+    return loaded_model
 
 #Transforms a list of videos into a dictionary of video name (in lower case) to list of videos.
 def toDict(videos):

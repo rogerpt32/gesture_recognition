@@ -3,6 +3,7 @@
 ## Outputs the optimal choice of hyperparameters in the GridSearch_output file
 
 import os, sys, collections, random, string
+import pickle
 import numpy as np
 from tempfile import TemporaryFile
 from sklearn.pipeline import Pipeline
@@ -53,6 +54,7 @@ X_PCA, _ = classify_library.make_FV_matrix(training_PCA,training_output, class_i
 n_components = 1000
 pca = PCA(n_components=n_components)
 pca.fit(X_PCA)
+classify_library.save_model(pca,'../data/models/pca')
 X_train_PCA = pca.transform(X_train)
 X_test_PCA = pca.transform(X_test)
 
@@ -95,4 +97,7 @@ for c in C:
             f.write('\n')
             f.write('\n')
 
+    # save best model observed: SVM kernel: rbf, C: 1000, gamma: 0.010000
+    classifier = OneVsRestClassifier(svm.SVC(random_state=0, C=1000, kernel='rbf', gamma=0.001)).fit(X_train_PCA, Y_train)
+    classify_library.save_model(classifier,'../data/models/svm')
 f.close()

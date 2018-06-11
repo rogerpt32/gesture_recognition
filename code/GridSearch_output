@@ -1,0 +1,214 @@
+PCA components: 1000
+X_train: 80, X_test: 10
+Scores: mAP, accuracy_score, avg_Precision, avg_Recall
+
+Settings: Linear SVM, C: 1, loss: hinge, penalty: l2
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+Settings: Linear SVM, C: 1, loss: squared_hinge, penalty: l2
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+Settings: SVM kernel: poly, C: 1, gamma: 0.010000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: poly, C: 1, gamma: 0.001000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: poly, C: 1, gamma: 0.000100
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: rbf, C: 1, gamma: 0.010000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: rbf, C: 1, gamma: 0.001000
+Scores: (0.850000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: rbf, C: 1, gamma: 0.000100
+Scores: (0.841667, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 1, gamma: 0.010000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 1, gamma: 0.001000
+Scores: (0.841667, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 1, gamma: 0.000100
+Scores: (0.841667, 0.800000, 0.733333, 0.800000)
+
+
+Settings: Linear SVM, C: 10, loss: hinge, penalty: l2
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+Settings: Linear SVM, C: 10, loss: squared_hinge, penalty: l2
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+Settings: SVM kernel: poly, C: 10, gamma: 0.010000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: poly, C: 10, gamma: 0.001000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: poly, C: 10, gamma: 0.000100
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: rbf, C: 10, gamma: 0.010000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: rbf, C: 10, gamma: 0.001000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: rbf, C: 10, gamma: 0.000100
+Scores: (0.850000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 10, gamma: 0.010000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 10, gamma: 0.001000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 10, gamma: 0.000100
+Scores: (0.841667, 0.800000, 0.733333, 0.800000)
+
+
+Settings: Linear SVM, C: 50, loss: hinge, penalty: l2
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+Settings: Linear SVM, C: 50, loss: squared_hinge, penalty: l2
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+Settings: SVM kernel: poly, C: 50, gamma: 0.010000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: poly, C: 50, gamma: 0.001000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: poly, C: 50, gamma: 0.000100
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: rbf, C: 50, gamma: 0.010000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: rbf, C: 50, gamma: 0.001000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: rbf, C: 50, gamma: 0.000100
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 50, gamma: 0.010000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 50, gamma: 0.001000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 50, gamma: 0.000100
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: Linear SVM, C: 100, loss: hinge, penalty: l2
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+Settings: Linear SVM, C: 100, loss: squared_hinge, penalty: l2
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+Settings: SVM kernel: poly, C: 100, gamma: 0.010000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: poly, C: 100, gamma: 0.001000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: poly, C: 100, gamma: 0.000100
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: rbf, C: 100, gamma: 0.010000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: rbf, C: 100, gamma: 0.001000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: rbf, C: 100, gamma: 0.000100
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 100, gamma: 0.010000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 100, gamma: 0.001000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 100, gamma: 0.000100
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: Linear SVM, C: 1000, loss: hinge, penalty: l2
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+Settings: Linear SVM, C: 1000, loss: squared_hinge, penalty: l2
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+Settings: SVM kernel: poly, C: 1000, gamma: 0.010000
+Scores: (1.000000, 0.900000, 0.850000, 0.900000)
+
+
+Settings: SVM kernel: poly, C: 1000, gamma: 0.001000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: poly, C: 1000, gamma: 0.000100
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: rbf, C: 1000, gamma: 0.010000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: rbf, C: 1000, gamma: 0.001000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: rbf, C: 1000, gamma: 0.000100
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 1000, gamma: 0.010000
+Scores: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+Settings: SVM kernel: sigmoid, C: 1000, gamma: 0.001000
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
+Settings: SVM kernel: sigmoid, C: 1000, gamma: 0.000100
+Scores: (0.925000, 0.800000, 0.733333, 0.800000)
+
+
