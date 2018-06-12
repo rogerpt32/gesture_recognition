@@ -92,6 +92,7 @@ void usage()
 	fprintf(stderr, "  -A [scale number]         The number of maximal spatial scales (default: 8 scales)\n");
 	fprintf(stderr, "  -I [initial gap]          The gap for re-sampling feature points (default: 1 frame)\n");
 	fprintf(stderr, "  -H [human bounding box]   The human bounding box file to remove outlier matches (default: None)\n");
+	fprintf(stderr, "  -v [show track]           Bool to show (1) or not show (0) trajectories (default: 0 in files 1 in camera\n");
 }
 
 bool arg_parse(int argc, char** argv)
@@ -99,7 +100,7 @@ bool arg_parse(int argc, char** argv)
 	int c;
 	bool flag = false;
 	char* executable = basename(argv[0]);
-	while((c = getopt (argc, argv, "hS:E:L:W:N:s:t:A:I:H:")) != -1)
+	while((c = getopt (argc, argv, "hS:E:L:W:N:s:t:A:I:H:v:")) != -1)
 	switch(c) {
 		case 'S':
 		start_frame = atoi(optarg);
@@ -136,6 +137,9 @@ bool arg_parse(int argc, char** argv)
 		case 'h':
 		usage();
 		exit(0);
+		break;
+		case 'v':
+		show_track = atoi(optarg);
 		break;
 
 		default:

@@ -27,6 +27,7 @@
 using namespace cv;
 using namespace cv::xfeatures2d;
 
+int show_track = 0; // set show_track = 1, if you want to visualize the trajectories
 int start_frame = 0;
 int end_frame = INT_MAX;
 int scale_num = 8;

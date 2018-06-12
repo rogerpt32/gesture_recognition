@@ -10,18 +10,15 @@ using namespace cv;
 using namespace cv::xfeatures2d;
 using namespace std;
 
-int show_track = 0; // set show_track = 1, if you want to visualize the trajectories
 bool stream = false;
 char* video;
 int main(int argc, char** argv)
 {
 	VideoCapture capture;
-	if(argc<=1 or strcmp(argv[1],"--cam")==0) {
+	if(argc<=1 or strcmp(argv[1],"cam")==0) {
 		stream = true;
 		show_track = 1;
 	}
-	if(argc==3 and strcmp(argv[2],"1")==0) show_track = 1;
-	else if(argc==3 and strcmp(argv[2],"0")==0) show_track = 0;
 	if(stream){
 		capture.open(0);
 		capture.set(cv::CAP_PROP_FRAME_WIDTH, 320);
