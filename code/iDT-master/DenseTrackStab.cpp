@@ -10,17 +10,31 @@ using namespace cv;
 using namespace cv::xfeatures2d;
 using namespace std;
 
-int show_track = 1; // set show_track = 1, if you want to visualize the trajectories
-
+int show_track = 0; // set show_track = 1, if you want to visualize the trajectories
+bool stream = false;
+char* video;
 int main(int argc, char** argv)
 {
 	VideoCapture capture;
-	char* video = argv[1];
+	if(argc<=1 or strcmp(argv[1],"--cam")==0) {
+		stream = true;
+		show_track = 1;
+	}
+	if(argc==3 and strcmp(argv[2],"1")==0) show_track = 1;
+	else if(argc==3 and strcmp(argv[2],"0")==0) show_track = 0;
+	if(stream){
+		capture.open(0);
+		capture.set(cv::CAP_PROP_FRAME_WIDTH, 320);
+		capture.set(cv::CAP_PROP_FRAME_HEIGHT, 240);
+	}
+	else{
+		video = argv[1];
+		capture.open(video);
+	}
 	int flag = arg_parse(argc, argv);
-	capture.open(video);
 
 	if(!capture.isOpened()) {
-		fprintf(stderr, "Could not initialize capturing..\n");
+		fprintf(stderr, "Could not initialize capturing..1\n");
 		return -1;
 	}
 
@@ -34,7 +48,8 @@ int main(int argc, char** argv)
 	InitDescInfo(&mbhInfo, 8, false, patch_size, nxy_cell, nt_cell);
 
 	SeqInfo seqInfo;
-	InitSeqInfo(&seqInfo, video);
+	if(stream)InitSeqInfoStream(&seqInfo);
+	else InitSeqInfo(&seqInfo, video);
 
 	std::vector<Frame> bb_list;
 	if(bb_file) {
@@ -73,7 +88,7 @@ int main(int argc, char** argv)
 	int init_counter = 0; // indicate when to detect new feature points
 	while(true) {
 		Mat frame;
-		int i, j, c;
+		int i, c;
 
 		// get a new frame
 		capture >> frame;

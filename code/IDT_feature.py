@@ -109,11 +109,12 @@ def list_descriptors_sampled(directory, vid_features, validIndices):
         points = []
         with open(os.path.join(directory,vid), 'r') as f:
             for line in f:
-                if VI < len(validIndices):
-                    if CL == validIndices[VI]:
-                        points.append(IDTFeature(line))
-                        VI+=1
-                CL += 1
+                if line[0]!='[':
+                  if VI < len(validIndices):
+                      if CL == validIndices[VI]:
+                          points.append(IDTFeature(line))
+                          VI+=1
+                  CL += 1
         toReturn = (points, CL, VI)
         return toReturn
 

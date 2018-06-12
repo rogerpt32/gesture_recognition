@@ -22,7 +22,7 @@ def resize(videoName, resizedName):
     if len(reso) < 1:
         return False
     # call ffmpeg again to resize
-    subprocess.call([ffmpeg, '-i', videoName, '-s', '180x144', resizedName])
+    subprocess.call([ffmpeg, '-i', videoName, '-s', '320x240', resizedName])
     return check(resizedName)
 
 # check if the video file is corrupted or not

@@ -69,6 +69,13 @@ void InitSeqInfo(SeqInfo* seqInfo, char* video)
 	seqInfo->length = frame_num;
 }
 
+void InitSeqInfoStream(SeqInfo* seqInfo)
+{
+	seqInfo->width = 320;
+	seqInfo->height = 240;
+	seqInfo->length = 1000;
+}
+
 void usage()
 {
 	fprintf(stderr, "Extract improved trajectories from a video\n\n");
@@ -122,7 +129,7 @@ bool arg_parse(int argc, char** argv)
 		break;
 		case 'I':
 		init_gap = atoi(optarg);
-		break;	
+		break;
 		case 'H':
 		bb_file = optarg;
 		break;
