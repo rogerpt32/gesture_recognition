@@ -23,6 +23,7 @@ int main(int argc, char** argv)
 		capture.open(0);
 		capture.set(cv::CAP_PROP_FRAME_WIDTH, 320);
 		capture.set(cv::CAP_PROP_FRAME_HEIGHT, 240);
+		capture.set(cv::CAP_PROP_FPS, 25);
 	}
 	else{
 		video = argv[1];
