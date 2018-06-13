@@ -39,12 +39,11 @@ if __name__ == '__main__':
    points = [] # a list of IDT features.
    frame_lim = frame_step
    for line in sys.stdin:
-      if line[0]!='[':
+      if line[0]!='[': # avoid getting info message as data
          frame = int(line.split()[0])
          if frame_lim <= frame:
             frame_lim=frame_lim+frame_step
             # print frame_lim<=frame
-
             if points!=[]:
                video_desc = IDT_feature.vid_descriptors(points)
                fish = computeFV.create_fisher_vector_unsaved(gmm_list, video_desc)
