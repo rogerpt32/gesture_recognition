@@ -7,7 +7,6 @@ import sys, ffmpeg
 video = 'roger_wave1.avi'
 video_dir = '../data/camera_test/videos/'
 tmp_dir = './tmp/'
-dtBin = './iDT-master/release/DenseTrackStab'
 gmm_list = '../data/fishers/gmm_list'
 class_index = '../data/class_index.npz'
 BOLD = '\033[1m'
@@ -31,6 +30,6 @@ if __name__ == '__main__':
     x_pca = pca.transform(x)
     result = svm.predict(x_pca)
     index_class = np.load(class_index)['index_class']
-    print '\n' + OKGREEN + BOLD + index_class[()][result[0]] + ENDC + '\n'
+    print '\n' +'RESULT: ' + OKGREEN + BOLD + index_class[()][result[0]] + ENDC + '\n'
 
     subprocess.call('rm -rf '+tmp_dir+'*',shell=True)

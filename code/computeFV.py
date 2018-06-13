@@ -61,3 +61,34 @@ def create_fisher_vector(gmm_list, video_desc, fisher_path):
   np.savez(fisher_path, fish=output_fv)
   print fisher_path
   return output_fv
+
+def create_fisher_vector_unsaved(gmm_list, video_desc):
+  """
+  expects a single video_descriptors object. videos_desciptors objects are defined in IDT_feature.py.
+
+  this single video_desc contains the (trajs, hogs, hofs, mbhxs, mbhys) np.ndarrays
+
+  works like create_fisher_vector but without saving anything to improve it's speed
+  """
+  vid_desc_list = []
+  vid_desc_list.append(video_desc.traj)
+  vid_desc_list.append(video_desc.hog)
+  vid_desc_list.append(video_desc.hof)
+  vid_desc_list.append(video_desc.mbhx)
+  vid_desc_list.append(video_desc.mbhy)
+  fvs = []
+  for descriptor,gmm_mean_pca in zip(vid_desc_list,gmm_list):
+      gmm, mean, pca_transform = gmm_mean_pca
+      descrip = descriptor.astype('float32') - mean
+      if pca_transform is not None:
+        descrip = np.dot(descriptor.astype('float32') - mean, pca_transform)
+      fv = ynumpy.fisher(gmm, descrip, include = ['mu', 'sigma'])
+      fv = np.sign(fv) * (np.abs(fv) ** 0.5)
+      norms = np.sqrt(np.sum(fv ** 2))
+      fv /= norms
+      fv[np.isnan(fv)] = 100
+      fvs.append(fv.T)
+  output_fv = np.hstack(fvs)
+  norm = np.sqrt(np.sum(output_fv ** 2))
+  output_fv /= norm
+  return output_fv
