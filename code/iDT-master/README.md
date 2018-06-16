@@ -1,7 +1,7 @@
 ### Compiling ###
 
 In order to compile the improved trajectories code, you need to have the following libraries installed in your system:
-* OpenCV library (tested with OpenCV-2.4.11)
+* OpenCV library (tested with OpenCV-3.4.1)
 * ffmpeg library (tested with ffmpeg-0.11.1)
 
 Currently, the libraries are the latest versions. In case they will be out of date, you can also find them on our website: http://lear.inrialpes.fr/people/wang/improved_trajectories
@@ -26,11 +26,11 @@ Once you are able to decode the video, computing our features is simple:
 
 Now you want to compare your file out.features.gz with the file that we have computed to verify that everything is working correctly. To do so, type:
 
-vimdiff out.features.gz ./test_sequences/person01_boxing_d1.gz 
+vimdiff out.features.gz ./test_sequences/person01_boxing_d1.gz
 
 Note that due to different versions of codecs, your features may be slightly different with ours. But the major part should be the same.
 
-Due to the randomness of RANSAC, you may get different features for some videos. But for the example "person01_boxing_d1_uncomp.avi", I don't observe any randomness. 
+Due to the randomness of RANSAC, you may get different features for some videos. But for the example "person01_boxing_d1_uncomp.avi", I don't observe any randomness.
 
 There are more explanations about our features on the website, and also a list of FAQ.
 
@@ -47,7 +47,7 @@ http://lear.inrialpes.fr/people/wang/
 
 ### LICENSE CONDITIONS ###
 
-Copyright (C) 2011 Heng Wang 
+Copyright (C) 2011 Heng Wang
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -62,4 +62,3 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
