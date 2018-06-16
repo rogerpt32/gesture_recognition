@@ -62,6 +62,7 @@ int main(int argc, char** argv)
 
 	if(show_track == 1)
 		namedWindow("DenseTrackStab", 0);
+		resizeWindow("DenseTrackStab", 640, 480);
 
 	Ptr<SURF> detector_surf = SURF::create(200);
 	Ptr<SURF> extractor_surf = SURF::create();
