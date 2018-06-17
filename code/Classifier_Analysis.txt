@@ -1,0 +1,238 @@
+Linear: C = 1, Loss = hinge, Penalty = l2
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Linear: C = 1, Loss = squared_hinge, Penalty = l2
+Precisions of CV = [ 0.9  0.9  1.   0.9  0.9  1.   1.   1.   1. ]
+Mean Precision = 0.955555555556
+
+Non-linear: C = 1, kernel = poly, Gamma = 0.01
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 1, kernel = poly, Gamma = 0.001
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 1, kernel = poly, Gamma = 0.0001
+Precisions of CV = [ 0.5  0.6  0.5  0.7  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.611111111111
+
+Non-linear: C = 1, kernel = rbf, Gamma = 0.01
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 1, kernel = rbf, Gamma = 0.001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 1, kernel = rbf, Gamma = 0.0001
+Precisions of CV = [ 0.9  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.922222222222
+
+Non-linear: C = 1, kernel = sigmoid, Gamma = 0.01
+Precisions of CV = [ 0.7  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.9
+
+Non-linear: C = 1, kernel = sigmoid, Gamma = 0.001
+Precisions of CV = [ 0.8  0.9  0.8  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.9
+
+Non-linear: C = 1, kernel = sigmoid, Gamma = 0.0001
+Precisions of CV = [ 0.9  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.922222222222
+
+Linear: C = 10, Loss = hinge, Penalty = l2
+Precisions of CV = [ 0.9  0.9  0.9  0.9  0.9  0.9  1.   1.   1. ]
+Mean Precision = 0.933333333333
+
+Linear: C = 10, Loss = squared_hinge, Penalty = l2
+Precisions of CV = [ 0.9  0.9  1.   0.9  0.9  0.9  1.   1.   1. ]
+Mean Precision = 0.944444444444
+
+Non-linear: C = 10, kernel = poly, Gamma = 0.01
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 10, kernel = poly, Gamma = 0.001
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 10, kernel = poly, Gamma = 0.0001
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 10, kernel = rbf, Gamma = 0.01
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 10, kernel = rbf, Gamma = 0.001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 10, kernel = rbf, Gamma = 0.0001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 10, kernel = sigmoid, Gamma = 0.01
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 10, kernel = sigmoid, Gamma = 0.001
+Precisions of CV = [ 0.7  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.9
+
+Non-linear: C = 10, kernel = sigmoid, Gamma = 0.0001
+Precisions of CV = [ 0.8  0.9  0.8  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.9
+
+Linear: C = 50, Loss = hinge, Penalty = l2
+Precisions of CV = [ 0.9  0.8  0.9  0.8  0.9  0.8  0.9  1.   1. ]
+Mean Precision = 0.888888888889
+
+Linear: C = 50, Loss = squared_hinge, Penalty = l2
+Precisions of CV = [ 0.9  0.9  0.9  0.8  0.9  0.8  0.9  1.   1. ]
+Mean Precision = 0.9
+
+Non-linear: C = 50, kernel = poly, Gamma = 0.01
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 50, kernel = poly, Gamma = 0.001
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 50, kernel = poly, Gamma = 0.0001
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 50, kernel = rbf, Gamma = 0.01
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 50, kernel = rbf, Gamma = 0.001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 50, kernel = rbf, Gamma = 0.0001
+Precisions of CV = [ 0.7  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.9
+
+Non-linear: C = 50, kernel = sigmoid, Gamma = 0.01
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 50, kernel = sigmoid, Gamma = 0.001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 50, kernel = sigmoid, Gamma = 0.0001
+Precisions of CV = [ 0.7  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.9
+
+Linear: C = 100, Loss = hinge, Penalty = l2
+Precisions of CV = [ 0.9  0.8  0.9  0.8  0.9  0.8  0.9  1.   1. ]
+Mean Precision = 0.888888888889
+
+Linear: C = 100, Loss = squared_hinge, Penalty = l2
+Precisions of CV = [ 0.9  0.8  0.9  0.8  0.9  0.8  0.9  1.   1. ]
+Mean Precision = 0.888888888889
+
+Non-linear: C = 100, kernel = poly, Gamma = 0.01
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 100, kernel = poly, Gamma = 0.001
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 100, kernel = poly, Gamma = 0.0001
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 100, kernel = rbf, Gamma = 0.01
+Precisions of CV = [ 0.8  0.9  0.9  0.8  0.9  1.   1.   0.9  1. ]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 100, kernel = rbf, Gamma = 0.001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 100, kernel = rbf, Gamma = 0.0001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 100, kernel = sigmoid, Gamma = 0.01
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 100, kernel = sigmoid, Gamma = 0.001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 100, kernel = sigmoid, Gamma = 0.0001
+Precisions of CV = [ 0.7  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.9
+
+Linear: C = 1000, Loss = hinge, Penalty = l2
+Precisions of CV = [ 0.9  0.8  0.9  0.8  0.9  0.8  0.9  1.   1. ]
+Mean Precision = 0.888888888889
+
+Linear: C = 1000, Loss = squared_hinge, Penalty = l2
+Precisions of CV = [ 0.9  0.8  0.9  0.8  0.9  0.8  0.9  1.   1. ]
+Mean Precision = 0.888888888889
+
+Non-linear: C = 1000, kernel = poly, Gamma = 0.01
+Precisions of CV = [ 0.5  0.6  0.5  0.7  0.5  0.7  0.6  0.5  0.7]
+Mean Precision = 0.588888888889
+
+Non-linear: C = 1000, kernel = poly, Gamma = 0.001
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 1000, kernel = poly, Gamma = 0.0001
+Precisions of CV = [ 0.7  0.6  0.5  0.6  0.5  0.7  0.6  0.5  0.9]
+Mean Precision = 0.622222222222
+
+Non-linear: C = 1000, kernel = rbf, Gamma = 0.01
+Precisions of CV = [ 0.9  0.9  0.9  0.9  0.9  0.9  0.9  1.   1. ]
+Mean Precision = 0.922222222222
+
+Non-linear: C = 1000, kernel = rbf, Gamma = 0.001
+Precisions of CV = [ 0.8  0.9  0.9  0.8  0.9  1.   1.   0.9  1. ]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 1000, kernel = rbf, Gamma = 0.0001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 1000, kernel = sigmoid, Gamma = 0.01
+Precisions of CV = [ 0.9  0.9  0.9  0.9  0.9  0.9  1.   1.   1. ]
+Mean Precision = 0.933333333333
+
+Non-linear: C = 1000, kernel = sigmoid, Gamma = 0.001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+Non-linear: C = 1000, kernel = sigmoid, Gamma = 0.0001
+Precisions of CV = [ 0.8  0.9  0.9  0.9  1.   1.   1.   0.9  0.8]
+Mean Precision = 0.911111111111
+
+
+########################################################
+
+BEST LINEAR SVM (CV precision = 95.5555555556 %)
+
+Settings: Linear SVM, C: 1000, loss: squared_hinge, penalty: l2
+Scores in test: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+########################################################
+
+BEST NON-LINEAR SVM (CV precision = 93.3333333333 %)
+
+Settings: SVM kernel: sigmoid, C: 1000, gamma: 0.000100
+Scores in test: (1.000000, 1.000000, 1.000000, 1.000000)
+
+
+########################################################
