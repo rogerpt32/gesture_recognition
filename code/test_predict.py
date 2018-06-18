@@ -1,5 +1,5 @@
 import classify_library
-# import computeIDTF
+import argparse
 import IDT_feature
 import computeFV
 import numpy as np
@@ -30,7 +30,13 @@ def check_resolution(vid):
 # Usage: python test_predict.py filename.avi
 
 if __name__ == '__main__':
-    video = sys.argv[1]
+    parser = argparse.ArgumentParser(description='Predicts the class of a single video.')
+    parser.add_argument("video_name", help="Name of the input desired to test prediction", type=str)
+    parser.add_argument('--no_pca', dest='no_pca', action='store_const',
+                   const=True, default=False,
+                   help='Testing without PCA reduction (default: uses PCA)')
+    args = parser.parse_args()
+    video = args.video_name
 
     vid = os.path.join(video_dir,video)
     if not check_resolution(vid):
@@ -48,11 +54,17 @@ if __name__ == '__main__':
     video_desc = IDT_feature.vid_descriptors(points)
     gmm_list = np.load(gmm_list+".npz")['gmm_list']
     fish = computeFV.create_fisher_vector_unsaved(gmm_list, video_desc)
-    pca=classify_library.load_model('../data/models/pca.sav')
-    svm=classify_library.load_model('../data/models/svm.sav')
+    if not args.no_pca:
+        pca=classify_library.load_model('../data/models/pca.sav')
+        svm=classify_library.load_model('../data/models/svm.sav')
+    else:
+        svm=classify_library.load_model('../data/models/svm_nopca.sav')
 
     fish = np.array(fish).reshape(1, -1)
-    fish_pca = pca.transform(fish)
+    if args.no_pca:
+        fish_pca=fish
+    else:
+        fish_pca = pca.transform(fish)
     result = svm.predict(fish_pca)
     index_class = np.load(class_index)['index_class']
     print '\n' +'RESULT: ' + OKGREEN + BOLD + index_class[()][result[0]] + ENDC + '\n'

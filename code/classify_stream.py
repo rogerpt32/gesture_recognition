@@ -29,9 +29,17 @@ ENDC = '\033[0m'
 
 #The input is a stream of IDTFs associated with a recording camera.
 if __name__ == '__main__':
+   parser = argparse.ArgumentParser(description='Testing different classifiers and print and analysis.')
+   parser.add_argument('--no_pca', dest='no_pca', action='store_const',
+				  const=True, default=False,
+				  help='Testing without PCA reduction (default: uses PCA)')
+   args = parser.parse_args()
    #loading everything necessary
-   pca=classify_library.load_model('../data/models/pca.sav')
-   svm=classify_library.load_model('../data/models/svm.sav')
+   if not args.no_pca:
+	   pca=classify_library.load_model('../data/models/pca.sav')
+	   svm=classify_library.load_model('../data/models/svm.sav')
+   else:
+	   svm=classify_library.load_model('../data/models/svm_nopca.sav')
    gmm_list = np.load(gmm_list+".npz")['gmm_list']
    index_class = np.load(class_index)['index_class']
    index_class = index_class[()]
@@ -48,8 +56,11 @@ if __name__ == '__main__':
                video_desc = IDT_feature.vid_descriptors(points)
                fish = computeFV.create_fisher_vector_unsaved(gmm_list, video_desc)
                fish=np.array(fish).reshape(1, -1)
-               fish_pca = pca.transform(fish)
-               result = svm.predict(fish_pca)
+               if args.no_pca:
+                  result = svm.predict(fish)
+               else:
+                  fish_pca = pca.transform(fish)
+                  result = svm.predict(fish_pca)
 
                print '\n' + 'RESULT: ' + OKGREEN + BOLD + index_class[result[0]] + ENDC + '\n'
 

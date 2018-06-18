@@ -223,7 +223,7 @@ Mean Precision = 0.911111111111
 
 BEST LINEAR SVM (CV precision = 95.5555555556 %)
 
-Settings: Linear SVM, C: 1000, loss: squared_hinge, penalty: l2
+Settings: Linear SVM, C: 1, loss: squared_hinge, penalty: l2
 Scores in test: (1.000000, 1.000000, 1.000000, 1.000000)
 
 
@@ -231,7 +231,7 @@ Scores in test: (1.000000, 1.000000, 1.000000, 1.000000)
 
 BEST NON-LINEAR SVM (CV precision = 93.3333333333 %)
 
-Settings: SVM kernel: sigmoid, C: 1000, gamma: 0.000100
+Settings: SVM kernel: sigmoid, C: 1000, gamma: 0.010000
 Scores in test: (1.000000, 1.000000, 1.000000, 1.000000)
 
 

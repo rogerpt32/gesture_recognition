@@ -3,4 +3,5 @@
 /data/out/*
 /code/tmp/*
 /data/camera_test/
+/data/models/svm_nopca.sav
 /code/test.txt
