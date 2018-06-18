@@ -111,17 +111,22 @@ for c in C:
 print '\n########################################################\n'
 print 'BEST LINEAR SVM (CV precision = '+str(best_linear*100)+' %)\n'
 #Best Linear SVM
-classifier = OneVsRestClassifier(LinearSVC(random_state=0, C=best_c_l, loss=best_loss, penalty=best_pen)).fit(X_train_PCA, Y_train)
-Scores = classify_library.metric_scores(classifier, X_test_PCA, Y_test)
+classifier_l = OneVsRestClassifier(LinearSVC(random_state=0, C=best_c_l, loss=best_loss, penalty=best_pen)).fit(X_train_PCA, Y_train)
+Scores = classify_library.metric_scores(classifier_l, X_test_PCA, Y_test)
 print "Settings: Linear SVM, C: %d, loss: %s, penalty: %s" % (c,lo,pen)
 print "Scores in test: (%f, %f, %f, %f)\n" % (Scores[0], Scores[1], Scores[2], Scores[3])
 
 print '\n########################################################\n'
 print 'BEST NON-LINEAR SVM (CV precision = '+str(best_non_linear*100)+' %)\n'
 #Best non-linear SVM
-classifier = OneVsRestClassifier(svm.SVC(random_state=0, C=best_c_nl, kernel=best_ker, gamma=best_gam)).fit(X_train_PCA, Y_train)
-Scores = classify_library.metric_scores(classifier, X_test_PCA, Y_test)
+classifier_nl = OneVsRestClassifier(svm.SVC(random_state=0, C=best_c_nl, kernel=best_ker, gamma=best_gam)).fit(X_train_PCA, Y_train)
+Scores = classify_library.metric_scores(classifier_nl, X_test_PCA, Y_test)
 print "Settings: SVM kernel: %s, C: %d, gamma: %f" % (ker,c,gam)
 print "Scores in test: (%f, %f, %f, %f)\n" % (Scores[0], Scores[1], Scores[2], Scores[3])
 
 print '\n########################################################'
+## Save the best classifier
+if best_linear>best_non_linear:
+    classify_library.save_model(classifier_l,'../data/models/svm')
+else:
+    classify_library.save_model(classifier_nl,'../data/models/svm')
