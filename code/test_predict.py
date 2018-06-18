@@ -21,8 +21,8 @@ def check_resolution(vid):
     vcap = cv2.VideoCapture(vid) # 0=camera
     if vcap.isOpened():
         # get vcap property
-        width = vcap.get(cv2.cv.CV_CAP_PROP_FRAME_WIDTH)   # float
-        height = vcap.get(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT) # float
+        width = vcap.get(cv2.CAP_PROP_FRAME_WIDTH)   # float
+        height = vcap.get(cv2.CAP_PROP_FRAME_HEIGHT) # float
         return width==320 and height==240 # 320x240 resolution is standard in this project
     else:
         return False
