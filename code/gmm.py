@@ -125,7 +125,7 @@ def sampleVids(vid_list):
         samples.extend(v[:1])
     return samples
 
-#python gmm.py 120 UCF101_dir train_list
+#python gmm.py 120 videos_dir train_list
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("k_gmm", help="number of GMM modes", type=int)
