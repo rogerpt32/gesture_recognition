@@ -27,7 +27,7 @@ if __name__ == '__main__':
                    help='Training with linear kernel (default: non-linear)')
     args = parser.parse_args()
 
-    linear = args.linear()
+    linear = args.linear
 
     class_index_file = "../data/class_index.npz"
     class_index_file_loaded = np.load(class_index_file)

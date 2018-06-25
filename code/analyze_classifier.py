@@ -10,7 +10,7 @@ from tempfile import TemporaryFile
 from sklearn.pipeline import Pipeline
 from sklearn.svm import LinearSVC
 from sklearn import svm
-from sklearn.model_selection import cross_val_score, LeaveOneOut
+from sklearn.model_selection import cross_val_score, cross_val_predict, LeaveOneOut
 from sklearn.multiclass import OneVsRestClassifier
 import sklearn.metrics as metrics
 from sklearn.decomposition import PCA
@@ -100,27 +100,39 @@ if __name__ == '__main__':
             for pen in penalty:
                 classifier = OneVsRestClassifier(LinearSVC(C=c, loss=lo, penalty=pen))
                 scores = cross_val_score(classifier, X_total_final, Y_total, cv=9)
+                Y_pred = cross_val_predict(classifier,X_total_final,Y_total, cv=9)
+                conf_mat = metrics.confusion_matrix(Y_total,Y_pred)
                 if best_linear < scores.mean():
+                    conf_mat_l = conf_mat
                     best_linear = scores.mean()
                     best_c_l = c
                     best_loss = lo
                     best_pen = pen
                 print 'Linear: C = '+str(c)+', Loss = '+lo+', Penalty = '+str(pen)
                 print 'Precisions of CV = '+str(scores)
-                print 'Mean Precision = '+str(scores.mean())+'\n'
+                print 'Mean Precision = '+str(scores.mean())
+                print 'Confusion Matrix = '
+                print conf_mat
+                print '\n-----------------------------------------------------\n'
         #Optimize the non-linear kernels
         for ker in kernel:
             for gam in gamma:
                 classifier = OneVsRestClassifier(svm.SVC(C=c, kernel=ker, gamma=gam))
                 scores = cross_val_score(classifier, X_total_final, Y_total, cv=9)
+                Y_pred = cross_val_predict(classifier,X_total_final,Y_total, cv=9)
+                conf_mat = metrics.confusion_matrix(Y_total,Y_pred)
                 if best_non_linear < scores.mean():
+                    conf_mat_nl = conf_mat
                     best_non_linear = scores.mean()
                     best_c_nl = c
                     best_ker = ker
                     best_gam = gam
                 print 'Non-linear: C = '+str(c)+', kernel = '+ker+', Gamma = '+str(gam)
                 print 'Precisions of CV = '+str(scores)
-                print 'Mean Precision = '+str(scores.mean())+'\n'
+                print 'Mean Precision = '+str(scores.mean())
+                print 'Confusion Matrix = '
+                print conf_mat
+                print '\n-----------------------------------------------------\n'
     print '\n########################################################\n'
     print 'BEST LINEAR SVM (CV precision = '+str(best_linear*100)+' %)\n'
     #Best Linear SVM
@@ -128,6 +140,8 @@ if __name__ == '__main__':
     Scores = classify_library.metric_scores(classifier_l, X_test_final, Y_test)
     print "Settings: Linear SVM, C: %d, loss: %s, penalty: %s" % (best_c_l,best_loss,best_pen)
     print "Scores in test: (%f, %f, %f, %f)\n" % (Scores[0], Scores[1], Scores[2], Scores[3])
+    print "Confusion Matrix = "
+    print conf_mat_l
 
     print '\n########################################################\n'
     print 'BEST NON-LINEAR SVM (CV precision = '+str(best_non_linear*100)+' %)\n'
@@ -136,6 +150,8 @@ if __name__ == '__main__':
     Scores = classify_library.metric_scores(classifier_nl, X_test_final, Y_test)
     print "Settings: SVM kernel: %s, C: %d, gamma: %f" % (best_ker,best_c_nl,best_gam)
     print "Scores in test: (%f, %f, %f, %f)\n" % (Scores[0], Scores[1], Scores[2], Scores[3])
+    print "Confusion Matrix = "
+    print conf_mat_nl
 
     print '\n########################################################'
     ## Save the best classifier

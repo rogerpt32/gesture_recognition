@@ -14,7 +14,7 @@ import argparse
 # GMM_dir = "./GMM_IDTFs"
 GMM_dir = "../data/out/"
 
-def populate_gmms(sample_vids, GMM_OUT, k_gmm, sample_size=1500000, PCA=False):
+def populate_gmms(feat_dir, sample_vids, GMM_OUT, k_gmm, sample_size=1500000, PCA=False):
     """
     sample_size is the number of IDTFs that we sample from the total_lines number of IDTFs
     that were computed previously.
@@ -25,13 +25,13 @@ def populate_gmms(sample_vids, GMM_OUT, k_gmm, sample_size=1500000, PCA=False):
     Returns the list of gmms.
     """
     #total_lines = 2488317
-    total_lines = total_IDTF_lines()
+    total_lines = total_IDTF_lines(feat_dir)
     print total_lines
     sample_size = min(total_lines,sample_size)
     sample_indices = random.sample(xrange(total_lines),sample_size)
     sample_indices.sort()
 
-    sample_descriptors = IDT_feature.list_descriptors_sampled(GMM_dir, sample_vids, sample_indices)
+    sample_descriptors = IDT_feature.list_descriptors_sampled(feat_dir, sample_vids, sample_indices)
     bm_list = IDT_feature.bm_descriptors(sample_descriptors)
     #Construct gmm models for each of the different descriptor types.
 
@@ -75,14 +75,14 @@ def gmm_model(sample, k_gmm, PCA=False):
     toReturn = (gmm,mean,pca_transform)
     return toReturn
 
-def total_IDTF_lines():
+def total_IDTF_lines(feat_dir):
     """
     Returns the total number of IDTFs (features) computed
     for all of the videos. Each line in a .feature file is an IDTF, so this
     is the total number of lines in the GMM_dir
     """
-    videos = [filename for filename in os.listdir(GMM_dir) if filename.endswith('.features')]
-    total_lines = sum([sum(1 for line in open(os.path.join(GMM_dir, vid))) for vid in videos])
+    videos = [filename for filename in os.listdir(feat_dir) if filename.endswith('.features')]
+    total_lines = sum([sum(1 for line in open(os.path.join(feat_dir, vid))) for vid in videos])
     return total_lines
 
 
@@ -152,4 +152,4 @@ if __name__ == '__main__':
     features = []
     for vid in vid_samples:
         features.append(vid[:-4]+".features")
-    populate_gmms(features,args.gmm_out,args.k_gmm,PCA=args.pca)
+    populate_gmms(GMM_dir, features,args.gmm_out,args.k_gmm,PCA=args.pca)
